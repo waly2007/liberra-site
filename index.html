@@ -4,220 +4,206 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Liberra · Pars libre.</title>
-  <meta name="description" content="Liberra, l'application de voyage pour iPhone qui prépare tout avec toi : trajets, hébergements et programme. Bientôt sur iPhone.">
+  <meta name="description" content="Liberra, l’application de voyage pour iPhone : trajets comparés, hébergements selon ton budget, programme heure par heure et dépenses partagées entre amis.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0E2A47" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0A1520" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Liberra · Pars libre.">
-  <meta property="og:description" content="L'application de voyage pour iPhone qui prépare tout avec toi : trajets, hébergements et programme.">
+  <meta property="og:description" content="L’application de voyage pour iPhone qui prépare tout avec toi : trajets, hébergements, programme et dépenses du groupe.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://waly2007.github.io/liberra-site/img/accueil.jpg">
+  <link rel="alternate" hreflang="fr" href="https://waly2007.github.io/liberra-site/">
+  <link rel="alternate" hreflang="en" href="https://waly2007.github.io/liberra-site/en/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 170 170'%3E%3Cg transform='translate(-24 3)'%3E%3Cpolygon points='52,46 82,34 82,100 52,100' fill='%231B9CE8'/%3E%3Cpolygon points='52,100 82,100 52,130' fill='%236CC4F6'/%3E%3Cpolygon points='82,100 82,130 52,130' fill='%230F7FC4'/%3E%3Cpolygon points='82,100 122,100 122,130 82,130' fill='%231B9CE8'/%3E%3Cg transform='translate(142 82) rotate(50) scale(0.7)'%3E%3Cpath d='M0 -30 C4 -30 6 -24 6 -18 L6 -4 L34 14 L34 21 L6 12 L6 24 L14 32 L14 37 L0 33 L-14 37 L-14 32 L-6 24 L-6 12 L-34 21 L-34 14 L-6 -4 L-6 -18 C-6 -24 -4 -30 0 -30 Z' fill='%230F7FC4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --azur: #1B9CE8;
-      --azur-clair: #6CC4F6;
-      --azur-profond: #0F7FC4;
-      --nuit: #0E2A47;
-      --bg: #FFFFFF;
-      --card: #F3F8FD;
-      --edge: #E1EDF8;
-      --text: #0E2A47;
-      --soft: #2E4560;
-      --muted: #4F6278;
-      --pill-bg: #E4F3FD;
-      --pill-text: #0F6FAE;
-      color-scheme: light;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0A1F35;
-        --card: #11304F;
-        --edge: #1C4268;
-        --text: #F3F8FD;
-        --soft: #D5E5F4;
-        --muted: #A9C0D6;
-        --pill-bg: #133B60;
-        --pill-text: #8FD3FA;
-        color-scheme: dark;
-      }
-    }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-size: 17px;
-      line-height: 1.55;
-      padding: env(safe-area-inset-top, 0) max(20px, env(safe-area-inset-right, 0)) env(safe-area-inset-bottom, 0) max(20px, env(safe-area-inset-left, 0));
-    }
-    main { max-width: 980px; margin: 0 auto; }
-    header.hero {
-      text-align: center;
-      padding: 56px 0 40px;
-    }
-    .brand { display: inline-flex; align-items: center; gap: 4px; }
-    .brand svg { width: 76px; height: 76px; }
-    .brand span { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; }
-    h1 {
-      font-size: clamp(44px, 11vw, 76px);
-      line-height: 1.02;
-      letter-spacing: -2px;
-      font-weight: 800;
-      margin: 28px 0 0;
-    }
-    h1 em { font-style: normal; color: var(--azur); }
-    .lead {
-      font-size: clamp(18px, 4.6vw, 22px);
-      color: var(--soft);
-      max-width: 640px;
-      margin: 18px auto 0;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 28px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: var(--pill-bg);
-      color: var(--pill-text);
-      font-weight: 700;
-      font-size: 15px;
-    }
-    .pill::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--azur); }
-    h2 {
-      font-size: clamp(26px, 6vw, 34px);
-      letter-spacing: -0.6px;
-      margin: 0 0 18px;
-      font-weight: 800;
-    }
-    section { padding: 28px 0; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--edge);
-      border-radius: 24px;
-      padding: 24px;
-    }
-    .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: var(--azur);
-      color: #FFFFFF;
-      margin-bottom: 14px;
-    }
-    .icon svg { width: 24px; height: 24px; }
-    .card h3 { font-size: 19px; margin: 0 0 6px; letter-spacing: -0.2px; }
-    .card p { margin: 0; color: var(--muted); font-size: 16px; }
-    .clear {
-      background: var(--card);
-      border: 1px solid var(--edge);
-      border-radius: 28px;
-      padding: 28px;
-    }
-    .clear ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-    .clear li { display: flex; gap: 12px; color: var(--soft); }
-    .clear li::before {
-      content: '';
-      flex: none;
-      width: 10px;
-      height: 10px;
-      margin-top: 9px;
-      border-radius: 50%;
-      background: var(--azur-clair);
-    }
-    footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      padding: 36px 0 44px;
-    }
-    @media (min-width: 760px) {
-      header.hero { padding: 88px 0 56px; }
-      section { padding: 40px 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
-  <main>
-    <header class="hero">
-      <div class="brand" aria-label="Liberra">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 170" aria-hidden="true">
-          <g transform="translate(-24 3)">
-            <polygon points="52,46 82,34 82,100 52,100" fill="#1B9CE8"/>
-            <polygon points="52,100 82,100 52,130" fill="#6CC4F6"/>
-            <polygon points="82,100 82,130 52,130" fill="#0F7FC4"/>
-            <polygon points="82,100 122,100 122,130 82,130" fill="#1B9CE8"/>
-            <g transform="translate(142 82) rotate(50) scale(0.7)">
-              <path d="M0 -30 C4 -30 6 -24 6 -18 L6 -4 L34 14 L34 21 L6 12 L6 24 L14 32 L14 37 L0 33 L-14 37 L-14 32 L-6 24 L-6 12 L-34 21 L-34 14 L-6 -4 L-6 -18 C-6 -24 -4 -30 0 -30 Z" fill="#0F7FC4"/>
-            </g>
-          </g>
-        </svg>
-        <span>Liberra</span>
-      </div>
-      <h1>Pars <em>libre.</em></h1>
-      <p class="lead">L’application de voyage pour iPhone qui prépare tout avec toi&nbsp;: trajets, hébergements et programme.</p>
-      <div class="pill">Bientôt sur iPhone</div>
-    </header>
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" href="#" aria-label="Liberra, accueil">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 170" aria-hidden="true"><g transform="translate(-24 3)"><polygon points="52,46 82,34 82,100 52,100" fill="#1B9CE8"/><polygon points="52,100 82,100 52,130" fill="#6CC4F6"/><polygon points="82,100 82,130 52,130" fill="#0F7FC4"/><polygon points="82,100 122,100 122,130 82,130" fill="#1B9CE8"/><g transform="translate(142 82) rotate(50) scale(0.7)"><path d="M0 -30 C4 -30 6 -24 6 -18 L6 -4 L34 14 L34 21 L6 12 L6 24 L14 32 L14 37 L0 33 L-14 37 L-14 32 L-6 24 L-6 12 L-34 21 L-34 14 L-6 -4 L-6 -18 C-6 -24 -4 -30 0 -30 Z" fill="#0F7FC4"/></g></g></svg>
+        Liberra
+      </a>
+      <nav class="nav" aria-label="Menu">
+        <a class="hide-sm" href="#fonctions">Fonctions</a>
+        <a class="hide-sm" href="#apercu">Aperçu</a>
+        <a class="hide-sm" href="#partenaires">Partenaires</a>
+        <a href="#contact">Contact</a>
+        <a class="lang" href="en/" hreflang="en" lang="en">EN</a>
+      </nav>
+    </div>
+  </header>
 
-    <section aria-labelledby="fonctions">
-      <h2 id="fonctions">Ce que Liberra fait pour toi</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16l20-6-20-6 4 6-4 6z"/><path d="M6 10h8"/></svg>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">En test sur iPhone · bientôt sur l’App Store</span>
+          <h1>Pars <em>libre.</em></h1>
+          <p class="lead">L’application de voyage qui prépare tout avec toi&nbsp;: trajets comparés, hébergements selon ton budget, programme heure par heure et dépenses partagées entre amis.</p>
+          <div class="actions">
+            <a class="btn primary" href="#apercu">Découvrir l’app</a>
+            <a class="btn ghost" href="#partenaires">Espace partenaires</a>
           </div>
-          <h3>Compare les trajets</h3>
-          <p>Vols et trains au départ de Genève, avec des prix estimés en francs suisses.</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/></svg>
-          </div>
-          <h3>Choisit selon ton budget</h3>
-          <p>Hôtels, appartements ou auberges : ce qui tient dans ton budget par personne.</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M8 17h6"/></svg>
-          </div>
-          <h3>Construit ton programme</h3>
-          <p>Heure par heure, autour de tes envies : visites, repas et temps de trajet.</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1.3-4 3.5-4S22 17.8 22 20"/></svg>
-          </div>
-          <h3>Voyage à plusieurs</h3>
-          <p>Dépenses partagées entre amis : l’app calcule qui doit combien à qui.</p>
+          <ul class="facts">
+            <li>Prix en francs suisses</li>
+            <li>Départs depuis Genève</li>
+            <li>Gratuite</li>
+          </ul>
+        </div>
+        <div class="phone"><img src="img/accueil.jpg" width="640" height="1391" alt="Écran d’accueil de Liberra : les prochains voyages (Barcelone, Lisbonne, Porto, Faro) avec leur prix par personne."></div>
+      </div>
+    </section>
+
+    <section id="fonctions" class="alt">
+      <div class="wrap">
+        <p class="kicker">Fonctions</p>
+        <h2>Tout ton voyage, au même endroit.</h2>
+        <p class="intro">Tu dis où, quand, avec qui et ton budget. Liberra s’occupe du reste, du billet jusqu’au programme de chaque journée.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16l20-6-20-6 4 6-4 6z"/><path d="M6 10h8"/></svg></div>
+            <h3>Trajets comparés</h3>
+            <p>Avion, train ou voiture, dans l’ordre du voyage. Pour les vols, des prix réels trouvés récemment, et un conseil quand partir un autre jour coûte moins cher.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/></svg></div>
+            <h3>Hébergement selon ton budget</h3>
+            <p>Hôtel, appartement ou auberge&nbsp;: Liberra calcule ce qu’il te reste après le transport et te propose ce qui tient dedans.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M8 17h6"/></svg></div>
+            <h3>Programme heure par heure</h3>
+            <p>Visites, repas et temps de trajet entre chaque étape, construits autour de tes envies&nbsp;: culture, nature, cuisine, fête…</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <h3>Pendant le voyage</h3>
+            <p>L’écran «&nbsp;Aujourd’hui&nbsp;» montre ce qui se passe maintenant et quand partir. Un rappel arrive 15 minutes avant chaque départ, si tu le souhaites.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1.3-4 3.5-4S22 17.8 22 20"/></svg></div>
+            <h3>Voyage à plusieurs</h3>
+            <p>Invite tes amis avec un code. Chacun ajoute ses dépenses, en temps réel&nbsp;; l’app calcule qui doit combien à qui.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+            <h3>À ne pas oublier</h3>
+            <p>Une liste préparée selon le pays, la saison et tes activités&nbsp;: papiers, argent, adaptateur, météo de saison.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="apercu">
+      <div class="wrap">
+        <p class="kicker">Aperçu</p>
+        <h2>Simple, clair, fait pour l’iPhone.</h2>
+        <p class="intro">De vraies captures de l’app, prises sur iPhone pendant les tests. Fais glisser pour tout voir.</p>
+      </div>
+      <div class="wrap">
+        <div class="gallery" tabindex="0" aria-label="Captures de l’app">
+          <figure>
+            <div class="phone"><img src="img/trajets.jpg" width="640" height="1200" loading="lazy" alt="Onglet Transport : itinéraire Genève, Barcelone, Genève et nombre de billets à réserver."></div>
+            <figcaption>Tes trajets<span>Dans l’ordre, avec le nombre de billets à réserver.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="img/programme.jpg" width="640" height="1200" loading="lazy" alt="Onglet Programme : envies, choix du jour et programme du matin."></div>
+            <figcaption>Ton programme<span>Jour par jour, autour de tes envies.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="img/aujourdhui.jpg" width="640" height="1391" loading="lazy" alt="Écran Aujourd’hui : activité en cours, prochaine activité et heure de départ conseillée."></div>
+            <figcaption>Aujourd’hui<span>Ce qui se passe maintenant, et quand partir.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="img/budget.jpg" width="640" height="1200" loading="lazy" alt="Onglet Dépenses : budget du voyage, dépensé, reste, et détail par catégorie."></div>
+            <figcaption>Ton budget<span>Dépensé, reste, et détail par catégorie.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <p class="kicker">Comment ça marche</p>
+        <h2>Trois questions, un voyage prêt.</h2>
+        <ol class="steps">
+          <li><strong>Dis-nous ton envie</strong><span>Destination (ou «&nbsp;choisis pour moi&nbsp;»), dates, avec qui tu pars et ton budget max par personne.</span></li>
+          <li><strong>Choisis tes options</strong><span>Trajets puis hébergement&nbsp;: Liberra propose, tu gardes ce qui te plaît. Le programme s’adapte tout seul.</span></li>
+          <li><strong>Réserve et pars</strong><span>Chaque billet et chaque logement s’ouvre sur un site de réservation, avec tes dates déjà remplies.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="partenaires">
+      <div class="wrap">
+        <p class="kicker">Partenaires</p>
+        <h2>Pour les programmes d’affiliation.</h2>
+        <p class="intro">Liberra est une application iOS indépendante, développée à Genève. Voici qui nous visons et comment vos offres apparaissent dans l’app.</p>
+        <div class="split">
+          <article class="card">
+            <h3>Public visé</h3>
+            <ul class="list">
+              <li>Voyageurs de Suisse romande&nbsp;: seuls, en couple, entre amis ou en famille.</li>
+              <li>Séjours courts en Europe et grands voyages, au départ de Genève&nbsp;; prix en CHF (EUR, USD, GBP possibles).</li>
+              <li>Application en français&nbsp;; anglais et allemand prévus avant la sortie publique.</li>
+              <li>Statut&nbsp;: en test sur iPhone, publication sur l’App Store en préparation.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Comment vos offres apparaissent</h3>
+            <ul class="list">
+              <li>Au bon moment&nbsp;: dans l’itinéraire et le programme, à côté du trajet, du logement ou de l’activité concernés.</li>
+              <li>Liens déjà remplis (dates, lieux, nombre de voyageurs) pour une réservation rapide.</li>
+              <li>Mention claire à côté de chaque lien&nbsp;: «&nbsp;Lien partenaire&nbsp;: Liberra peut toucher une commission, sans frais en plus pour toi&nbsp;».</li>
+              <li>Pas de publicité payante sur vos marques, pas de clics incités, pas de spam, aucune revente de données.</li>
+            </ul>
+          </article>
+        </div>
+        <article class="card" style="margin-top:18px">
+          <h3>Partenaires déjà intégrés</h3>
+          <p>Via Travelpayouts&nbsp;: vols (Aviasales), activités et musées (Tiqets), eSIM (Saily) et consigne à bagages (Radical Storage).</p>
+          <ul class="partners" aria-label="Partenaires">
+            <li>Aviasales</li><li>Tiqets</li><li>Saily</li><li>Radical Storage</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <section aria-labelledby="transparence">
-      <div class="clear">
-        <h2 id="transparence">En toute transparence</h2>
-        <ul>
-          <li>Liberra est en développement et testée sur iPhone. Elle n’est pas encore sur l’App Store.</li>
-          <li>Elle est pensée d’abord pour la Suisse romande : prix en francs suisses, départs depuis Genève.</li>
-          <li>Les prix affichés sont des estimations ; les offres réelles s’ouvrent sur les sites de réservation.</li>
-          <li>Liberra peut toucher une commission quand tu réserves via des liens partenaires, sans frais en plus pour toi.</li>
-        </ul>
+    <section class="alt">
+      <div class="wrap">
+        <p class="kicker">Transparence</p>
+        <h2>Ce que nous promettons.</h2>
+        <div class="grid">
+          <article class="card"><h3>Prix honnêtes</h3><p>Les vols marqués «&nbsp;prix réel&nbsp;» viennent de vraies recherches récentes&nbsp;; le reste est estimé, et c’est écrit. Le prix final est celui du site de réservation.</p></article>
+          <article class="card"><h3>Gratuite</h3><p>L’app est gratuite. Elle est financée par de petites commissions sur certains liens partenaires, toujours signalés, sans frais en plus pour toi.</p></article>
+          <article class="card"><h3>Tes données t’appartiennent</h3><p>Serveur en Suisse (Zurich), aucune revente. Dans l’app, tu peux télécharger tes données ou supprimer ton compte à tout moment. <a href="confidentialite.html">Politique de confidentialité</a></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <p class="kicker">Contact</p>
+        <h2>Une question, un partenariat&nbsp;?</h2>
+        <p class="intro">Écris-nous, nous répondons en français ou en anglais.</p>
+        <span class="mail">contact.liberra@gmail.com</span>
+        <div class="actions" style="justify-content:center;margin-top:0">
+          <a class="btn primary" href="mailto:contact.liberra@gmail.com">Écrire un e-mail</a>
+        </div>
       </div>
     </section>
   </main>
-  <footer>© 2026 Liberra · Genève, Suisse</footer>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Liberra · Genève, Suisse</span>
+      <nav aria-label="Liens du pied de page">
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="#contact">Contact</a>
+        <a href="en/" hreflang="en" lang="en">English</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
