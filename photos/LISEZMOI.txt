@@ -1,0 +1,3 @@
+Photos des destinations de l'app Liberra.
+Source : Unsplash (https://unsplash.com), licence Unsplash (https://unsplash.com/license).
+Le nom de chaque fichier reprend l'identifiant de la photo chez Unsplash ; -s = petite version, -l = grande version.
